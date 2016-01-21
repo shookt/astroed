@@ -19,11 +19,11 @@ namespace Asteroid_Belt_Assault
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        enum GameStates { TitleScreen, Playing, PlayerDead, GameOver };
-        GameStates gameState = GameStates.TitleScreen;
-        Texture2D titleScreen;
+        enum GameStates { HomeScreen, Playing, PlayerDead, GameOver };
+        GameStates gameState = GameStates.HomeScreen;
+        Texture2D HomeScreen;
         Texture2D spriteSheet;
-        Texture2D papafrank;
+       
 
         StarField starField;
         AsteroidManager asteroidManager;
@@ -37,8 +37,8 @@ namespace Asteroid_Belt_Assault
 
         private float playerDeathDelayTime = 10f;
         private float playerDeathTimer = 0f;
-        private float titleScreenTimer = 0f;
-        private float titleScreenDelayTime = 1f;
+        private float HomeScreenTimer = 0f;
+        private float HomeScreenDelayTime = 1f;
 
         private int playerStartingLives = 3;
         private Vector2 playerStartLocation = new Vector2(390, 550);
@@ -74,7 +74,7 @@ namespace Asteroid_Belt_Assault
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            titleScreen = Content.Load<Texture2D>(@"Textures\TitleScreen");
+            HomeScreen = Content.Load<Texture2D>(@"Textures\HomeScreen");
             spriteSheet = Content.Load<Texture2D>(@"Textures\spriteSheet");
 
             starField = new StarField(
@@ -86,10 +86,10 @@ namespace Asteroid_Belt_Assault
                 new Rectangle(0, 450, 2, 2));
 
             asteroidManager = new AsteroidManager(
-                10,
-                papafrank,
-                new Rectangle(0, 0, 128, 128),
                 20,
+                spriteSheet,
+                new Rectangle(472, 208, 518, 245),
+                1,
                 this.Window.ClientBounds.Width,
                 this.Window.ClientBounds.Height);
 
@@ -172,11 +172,11 @@ namespace Asteroid_Belt_Assault
 
             switch (gameState)
             {
-                case GameStates.TitleScreen:
-                    titleScreenTimer +=
+                case GameStates.HomeScreen:
+                    HomeScreenTimer +=
                         (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-                    if (titleScreenTimer >= titleScreenDelayTime)
+                    if (HomeScreenTimer >= HomeScreenDelayTime)
                     {
                         if ((Keyboard.GetState().IsKeyDown(Keys.Space)) ||
                             (GamePad.GetState(PlayerIndex.One).Buttons.A ==
@@ -243,7 +243,7 @@ namespace Asteroid_Belt_Assault
                     explosionManager.Update(gameTime);
                     if (playerDeathTimer >= playerDeathDelayTime)
                     {
-                        gameState = GameStates.TitleScreen;
+                        gameState = GameStates.HomeScreen;
                     }
                     break;
 
@@ -262,9 +262,9 @@ namespace Asteroid_Belt_Assault
 
             spriteBatch.Begin();
 
-            if (gameState == GameStates.TitleScreen)
+            if (gameState == GameStates.HomeScreen)
             {
-                spriteBatch.Draw(titleScreen,
+                spriteBatch.Draw(HomeScreen,
                     new Rectangle(0, 0, this.Window.ClientBounds.Width,
                         this.Window.ClientBounds.Height),
                         Color.White);

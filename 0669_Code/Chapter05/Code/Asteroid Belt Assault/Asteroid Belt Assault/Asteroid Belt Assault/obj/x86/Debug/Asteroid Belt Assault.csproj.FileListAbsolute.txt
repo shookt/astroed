@@ -59,3 +59,4 @@ C:\Users\EAHS CS\Desktop\astroed\0669_Code\Chapter05\Code\Asteroid Belt Assault\
 C:\Users\EAHS CS\Desktop\astroed\0669_Code\Chapter05\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\obj\x86\Debug\Asteroid Belt Assault.exe
 C:\Users\EAHS CS\Desktop\astroed\0669_Code\Chapter05\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\obj\x86\Debug\Asteroid Belt Assault.pdb
 C:\Users\EAHS CS\Desktop\astroed\0669_Code\Chapter05\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\papafrank.xnb
+C:\Users\EAHS CS\Desktop\astroed\0669_Code\Chapter05\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\HomeScreen.xnb
