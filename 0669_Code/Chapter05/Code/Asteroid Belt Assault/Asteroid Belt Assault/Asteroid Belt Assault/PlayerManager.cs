@@ -39,7 +39,7 @@ namespace Asteroid_Belt_Assault
             PlayerShotManager = new ShotManager(
                 texture,
                 new Rectangle(72, 272, 88, 312),
-                4,
+                1,
                 2,
                 250f,
                 screenBounds);
