@@ -35,7 +35,7 @@ namespace Asteroid_Belt_Assault
 
         SpriteFont pericles14;
 
-        private float playerDeathDelayTime = 10f;
+        private float playerDeathDelayTime = 3.855f;
         private float playerDeathTimer = 0f;
         private float HomeScreenTimer = 0f;
         private float HomeScreenDelayTime = 1f;
@@ -86,9 +86,9 @@ namespace Asteroid_Belt_Assault
                 new Rectangle(0, 450, 2, 2));
 
             asteroidManager = new AsteroidManager(
-                20,
+                14,
                 spriteSheet,
-                new Rectangle(472, 208, 518, 245),
+                new Rectangle(472, 208, 52, 49),
                 1,
                 this.Window.ClientBounds.Width,
                 this.Window.ClientBounds.Height);
